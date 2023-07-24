@@ -1,0 +1,26 @@
+/* Write your CSS here */
+
+.main {
+  padding: 10px;
+
+  background-image: url('https://assets.ccbp.in/frontend/react-js/ipl-dashboard-lg-bg.png');
+  min-height: 100vh;
+  min-width: 388px;
+  background-size: cover;
+}
+.main-logo {
+  height: 50px;
+}
+
+ul {
+  padding: 0px;
+}
+li {
+  list-style: none;
+}
+h1 {
+  color: #ffffff;
+}
+.main-heading {
+  font-size: 20px;
+}

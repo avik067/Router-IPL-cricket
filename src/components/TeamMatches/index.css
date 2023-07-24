@@ -1,0 +1,13 @@
+/* Write your CSS here */
+
+.second-main {
+  padding: 40px 10px 10px 10px;
+  background-image: linear-gradient(#a4261d, #1e293b);
+  min-height: 100vh;
+  min-width: 380px;
+}
+
+.banner {
+  height: 300px;
+  width: 100%;
+}
