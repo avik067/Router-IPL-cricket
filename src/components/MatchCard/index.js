@@ -41,9 +41,9 @@ const LatestMatch = ({details}) => {
         src={competingTeamLogo}
         alt={competingTeam}
       />
-      <h1>{competingTeam}</h1>
+      <p>{competingTeam}</p>
       <p>{result}</p>
-      <h1 className={color}>{matchStatus}</h1>
+      <p className={color}>{matchStatus}</p>
     </li>
   )
 }

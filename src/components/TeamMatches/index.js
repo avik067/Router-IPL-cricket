@@ -1,5 +1,6 @@
 // Write your code here
 import {Component} from 'react'
+import Loader from 'react-loader-spinner'
 import LatestMatch from '../LatestMatch'
 import MatchCard from '../MatchCard'
 import './index.css'
@@ -31,12 +32,12 @@ class TeamMatches extends Component {
     const {data, k, isLoading} = this.state
     if (!isLoading) {
       const {teamBannerUrl, recentMatches, latestMatchDetails} = data
-      console.log(latestMatchDetails)
-      console.log(recentMatches)
+      //   console.log(latestMatchDetails)
+      //   console.log(recentMatches)
 
       return (
         <div className="second-main">
-          <img className="banner" src={teamBannerUrl} alt={k} />
+          <img className="banner" src={teamBannerUrl} alt="team banner" />
           <p>Latest Matches</p>
           <LatestMatch
             details={latestMatchDetails}
@@ -51,7 +52,11 @@ class TeamMatches extends Component {
       )
     }
     console.log('loading..........')
-    return <div>Loading Loading 🙂</div>
+    return (
+      <div className="second-main row-nor center">
+        <Loader type="TailSpin" color="#00BFFF" height={50} width={50} />
+      </div>
+    )
   }
 }
 

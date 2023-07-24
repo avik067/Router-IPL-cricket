@@ -34,7 +34,7 @@ const MatchCard = ({details}) => {
   return (
     <div className="latest-card row-nor apart ">
       <div>
-        <h1>{competingTeam}</h1>
+        <p>{competingTeam}</p>
         <p>{date}</p>
         <p>{venue}</p>
         <p>{result}</p>
@@ -42,7 +42,7 @@ const MatchCard = ({details}) => {
       <img
         className="opponent-logo"
         src={competingTeamLogo}
-        alt={competingTeam}
+        alt="competing team"
       />
       <div>
         <p>First Innings</p>
