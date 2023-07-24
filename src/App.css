@@ -13,6 +13,9 @@ body {
 .center {
   justify-content: center;
 }
+.space-evenly {
+  justify-content: space-evenly;
+}
 .row-nor {
   display: flex;
   align-items: center;

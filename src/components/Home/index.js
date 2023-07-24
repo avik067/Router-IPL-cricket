@@ -1,13 +1,14 @@
 // Write your code here
 
 import {Component} from 'react'
+import Loader from 'react-loader-spinner'
 // import {Link} from 'react-router-dom'
 import TeamCard from '../TeamCard'
 
 import './index.css'
 
 class Home extends Component {
-  state = {dataList: []}
+  state = {dataList: [], isLoading: true}
 
   componentDidMount() {
     this.getData()
@@ -23,12 +24,12 @@ class Home extends Component {
       teamImageUrl: each.team_image_url,
     }))
 
-    this.setState({dataList: newList})
+    this.setState({dataList: newList, isLoading: false})
   }
 
   render() {
-    const {dataList} = this.state
-    return (
+    const {dataList, isLoading} = this.state
+    const show = (
       <div className="main col-nor">
         <div className="row-nor center">
           <img
@@ -38,13 +39,20 @@ class Home extends Component {
           />
           <h1 className="main-heading">IPL Dashboard</h1>
         </div>
-        <ul className="row-nor center wrap">
-          {dataList.map(each => (
-            <TeamCard details={each} key={each.id} />
-          ))}
-        </ul>
+        <>
+          {!isLoading ? (
+            <ul className="row-nor center wrap">
+              {dataList.map(each => (
+                <TeamCard details={each} key={each.id} />
+              ))}
+            </ul>
+          ) : (
+            <Loader type="TailSpin" color="#00BFFF" height={50} width={50} />
+          )}
+        </>
       </div>
     )
+    return show
   }
 }
 

@@ -42,7 +42,7 @@ class TeamMatches extends Component {
             details={latestMatchDetails}
             key={latestMatchDetails.id}
           />
-          <ul className="row-nor center wrap">
+          <ul className="row-nor space-evenly wrap">
             {recentMatches.map(each => (
               <MatchCard details={each} key={each.id} />
             ))}

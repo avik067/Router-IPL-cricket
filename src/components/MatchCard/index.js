@@ -4,11 +4,14 @@ import './index.css'
 
 const LatestMatch = ({details}) => {
   console.log('Match Card')
+
   const newOb = {
     competingTeam: details.competing_team,
     competingTeamLogo: details.competing_team_logo,
     date: details.date,
     id: details.id,
+    firstInnings: details.first_innings,
+
     manOfTheMatch: details.man_of_the_match,
     matchStatus: details.match_status,
     result: details.result,
@@ -16,8 +19,33 @@ const LatestMatch = ({details}) => {
     umpires: details.umpires,
     venue: details.venue,
   }
+  const {
+    competingTeam,
+    competingTeamLogo,
+    date,
+    id,
+    firstInnings,
+    manOfTheMatch,
+    matchStatus,
+    result,
+    secondInnings,
+    umpires,
+    venue,
+  } = newOb
 
-  return <li className="latest-card ">LatestMatch</li>
+  const color = matchStatus === 'Won' ? 'green' : 'red'
+  return (
+    <li className="other-card col-nor space-evenly ">
+      <img
+        className="other-match-logo"
+        src={competingTeamLogo}
+        alt={competingTeam}
+      />
+      <h1>{competingTeam}</h1>
+      <p>{result}</p>
+      <h1 className={color}>{matchStatus}</h1>
+    </li>
+  )
 }
 
 export default LatestMatch
