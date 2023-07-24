@@ -1,1 +1,11 @@
 /* Write your CSS here */
+
+.main-no {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/ipl-dashboard-lg-bg.png');
+  height: 100vh;
+}
+
+.not-found {
+  font-size: 20px;
+  color: white;
+}
