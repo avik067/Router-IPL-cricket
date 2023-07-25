@@ -28,15 +28,42 @@ class TeamMatches extends Component {
     this.setState({data: newOb, k: key, isLoading: false})
   }
 
+  getClr = () => {
+    const {k} = this.state
+
+    switch (k) {
+      case 'RCB':
+        return 'rcb'
+      case 'KKR':
+        return 'kkr'
+      case 'KXP':
+        return 'kxp'
+      case 'CSK':
+        return 'csk'
+      case 'RR':
+        return 'rr'
+      case 'MI':
+        return 'mi'
+      case 'SH':
+        return 'srh'
+      case 'DC':
+        return 'dc'
+      default:
+        return ''
+    }
+  }
+
   render() {
     const {data, k, isLoading} = this.state
+
     if (!isLoading) {
       const {teamBannerUrl, recentMatches, latestMatchDetails} = data
+      const clr = this.getClr()
       //   console.log(latestMatchDetails)
       //   console.log(recentMatches)
 
       return (
-        <div className="second-main">
+        <div className={`second-main ${clr}`}>
           <img className="banner" src={teamBannerUrl} alt="team banner" />
           <p>Latest Matches</p>
           <LatestMatch
